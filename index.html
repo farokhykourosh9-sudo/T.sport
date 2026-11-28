@@ -58,9 +58,7 @@
     position: fixed; inset: 0; z-index: -3; pointer-events: none; overflow: hidden;
     background-color: var(--black);
     background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2000&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
+    background-size: cover; background-position: center bottom; background-repeat: no-repeat;
   }
   .bg-layer::before {
     content: ''; position: absolute; inset: 0;
@@ -80,19 +78,12 @@
   }
   .lightning-flash.flash-1 { animation: flashAnim 0.6s ease-out; }
   .lightning-flash.flash-2 { animation: flashAnim 0.8s ease-out; }
-  @keyframes flashAnim {
-    0% { opacity: 0; } 5% { opacity: 0.9; } 10% { opacity: 0.2; } 15% { opacity: 0.7; } 25% { opacity: 0.3; } 100% { opacity: 0; }
-  }
+  @keyframes flashAnim { 0% { opacity: 0; } 5% { opacity: 0.9; } 10% { opacity: 0.2; } 15% { opacity: 0.7; } 25% { opacity: 0.3; } 100% { opacity: 0; } }
   
   .lightning-container { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
-  .lightning-bolt {
-    position: absolute; opacity: 0;
-    filter: drop-shadow(0 0 4px #fff) drop-shadow(0 0 12px var(--ice-blue)) drop-shadow(0 0 20px var(--purple));
-  }
+  .lightning-bolt { position: absolute; opacity: 0; filter: drop-shadow(0 0 4px #fff) drop-shadow(0 0 12px var(--ice-blue)) drop-shadow(0 0 20px var(--purple)); }
   .lightning-bolt.strike { animation: lightningStrike 1.2s ease-out; }
-  @keyframes lightningStrike {
-    0% { opacity: 0; } 3% { opacity: 1; } 6% { opacity: 0.5; } 9% { opacity: 0.95; } 14% { opacity: 0.6; } 20% { opacity: 0.9; } 30% { opacity: 0.2; } 100% { opacity: 0; }
-  }
+  @keyframes lightningStrike { 0% { opacity: 0; } 3% { opacity: 1; } 6% { opacity: 0.5; } 9% { opacity: 0.95; } 14% { opacity: 0.6; } 20% { opacity: 0.9; } 30% { opacity: 0.2; } 100% { opacity: 0; } }
   
   .bolt-main { stroke: #fff; stroke-width: 0.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
   .bolt-branch-1 { stroke: var(--ice-blue); stroke-width: 0.4; fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0.9; }
@@ -105,17 +96,13 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   
-  /* ============================================= */
-  /* ★★★ ناوبری مگا منو (Mega Menu) ★★★ */
-  /* ============================================= */
+  /* ============ ناوبری ============ */
   nav {
     position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
     background: rgba(10, 4, 16, 0.75); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(168,220,255,0.15);
     transition: all 0.4s;
   }
-  .nav-top {
-    max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 14px 28px; position: relative; z-index: 2;
-  }
+  .nav-top { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 14px 28px; position: relative; z-index: 2; }
   .logo { font-family: 'Orbitron', sans-serif; font-size: 22px; font-weight: 900; letter-spacing: 3px; display: flex; align-items: center; gap: 12px; cursor: pointer; }
   .logo-mark { width: 34px; height: 34px; position: relative; display: flex; align-items: center; justify-content: center; }
   .logo-mark::before, .logo-mark::after {
@@ -123,80 +110,51 @@
   }
   .logo-mark::after { border-color: var(--purple); animation: rotateBox 4s linear infinite reverse; inset: 4px; border-radius: 8px; box-shadow: 0 0 10px var(--purple); }
   @keyframes rotateBox { to { transform: rotate(360deg); } }
-  .logo-text {
-    background: linear-gradient(90deg, #fff, var(--ice-blue), var(--pink-light)); background-size: 200% auto;
-    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 12px rgba(168,220,255,0.6)); animation: shine 4s linear infinite;
-  }
+  .logo-text { background: linear-gradient(90deg, #fff, var(--ice-blue), var(--pink-light)); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 12px rgba(168,220,255,0.6)); animation: shine 4s linear infinite; }
   
-  /* دکمه سبد خرید */
+  /* ★★★ آیکون سبد خرید مدرن ★★★ */
   .cart-btn {
-    position: relative; background: linear-gradient(135deg, var(--purple-2), var(--pink)); border: none; color: #fff; padding: 10px 20px;
-    border-radius: 12px; font-family: inherit; font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 10px; transition: all 0.3s;
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.1) inset, 0 8px 25px rgba(157,0,255,0.4); overflow: hidden; cursor: pointer;
+    position: relative; background: linear-gradient(135deg, var(--purple-2), var(--pink)); border: none; color: #fff; padding: 10px 18px;
+    border-radius: 14px; font-family: inherit; font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 10px; transition: all 0.3s;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.15) inset, 0 8px 25px rgba(157,0,255,0.4); cursor: pointer; overflow: hidden;
   }
-  .cart-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 35px rgba(255,0,128,0.6); }
-  .cart-count { background: #fff; color: var(--pink); border-radius: 50px; min-width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; padding: 0 6px; transition: transform 0.3s; }
+  .cart-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 0 0 1px rgba(255,255,255,0.3) inset, 0 15px 35px rgba(255,0,128,0.6); }
+  .cart-btn svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.3s; }
+  .cart-btn:hover svg { transform: translateY(-2px); filter: drop-shadow(0 0 5px #fff); }
+  .cart-count { background: #fff; color: var(--pink); border-radius: 50px; min-width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; padding: 0 6px; transition: transform 0.3s; box-shadow: 0 0 10px rgba(255,255,255,0.5); }
   .cart-count.bump { transform: scale(1.4); }
 
-  /* ساختار منو (دسکتاپ) */
-  .mega-menu-wrapper {
-    max-width: 1400px; margin: 0 auto; display: flex; justify-content: center; gap: 10px; padding: 0 20px 14px;
-    position: relative; z-index: 2;
-  }
-  .mega-item {
-    position: relative;
-  }
+  .mega-menu-wrapper { max-width: 1400px; margin: 0 auto; display: flex; justify-content: center; gap: 10px; padding: 0 20px 14px; position: relative; z-index: 2; }
+  .mega-item { position: relative; }
   .mega-btn {
     background: transparent; border: 1px solid transparent; color: #b8b8c8; padding: 8px 16px; border-radius: 10px;
     font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 6px;
   }
   .mega-btn:hover, .mega-item:hover .mega-btn { color: #fff; background: rgba(255,255,255,0.05); border-color: rgba(168,220,255,0.3); box-shadow: 0 0 15px rgba(168,220,255,0.2); }
   
-  /* پنل مگا منو (شیشه‌ای) */
   .mega-panel {
     position: absolute; top: calc(100% + 5px); left: 50%; transform: translateX(-50%) translateY(10px);
     background: rgba(13, 7, 20, 0.95); backdrop-filter: blur(30px); border: 1px solid rgba(168,220,255,0.2);
     border-radius: 20px; padding: 24px; min-width: 400px; width: max-content; max-width: 800px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(157,0,255,0.2);
     opacity: 0; visibility: hidden; transition: all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.3);
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px;
-    pointer-events: none; z-index: 100;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; pointer-events: none; z-index: 100;
   }
+  .mega-item:hover .mega-panel { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); pointer-events: auto; }
   
-  /* با هاور روی آیتم، پنل نمایش داده می‌شود */
-  .mega-item:hover .mega-panel {
-    opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); pointer-events: auto;
-  }
-  
-  .sub-cat-btn {
-    display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px;
-    color: #a0a0b0; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; text-decoration: none;
-  }
-  .sub-cat-btn::before {
-    content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--purple-light); opacity: 0.5; transition: all 0.2s;
-  }
-  .sub-cat-btn:hover {
-    background: rgba(168,220,255,0.1); color: #fff; transform: translateX(-5px);
-  }
-  .sub-cat-btn:hover::before {
-    background: var(--ice-white); opacity: 1; box-shadow: 0 0 10px var(--ice-white);
-  }
+  .sub-cat-btn { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; color: #a0a0b0; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; text-decoration: none; }
+  .sub-cat-btn::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--purple-light); opacity: 0.5; transition: all 0.2s; }
+  .sub-cat-btn:hover { background: rgba(168,220,255,0.1); color: #fff; transform: translateX(-5px); }
+  .sub-cat-btn:hover::before { background: var(--ice-white); opacity: 1; box-shadow: 0 0 10px var(--ice-white); }
 
-  /* منوی موبایل (همبرگری) */
-  .mobile-menu-btn {
-    display: none; background: transparent; border: none; color: #fff; font-size: 24px; cursor: pointer; padding: 5px;
-  }
+  .mobile-menu-btn { display: none; background: transparent; border: none; color: #fff; font-size: 24px; cursor: pointer; padding: 5px; }
   .mobile-menu {
     position: fixed; inset: 0; background: rgba(5, 2, 8, 0.98); backdrop-filter: blur(20px); z-index: 99;
-    padding: 80px 20px 40px; overflow-y: auto; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
-    display: flex; flex-direction: column; gap: 15px;
+    padding: 80px 20px 40px; overflow-y: auto; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1); display: flex; flex-direction: column; gap: 15px;
   }
   .mobile-menu.open { transform: translateX(0); }
   .mob-cat-group { border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; }
-  .mob-cat-header {
-    background: rgba(255,255,255,0.03); padding: 16px; font-weight: 800; font-size: 1rem; cursor: pointer;
-    display: flex; justify-content: space-between; align-items: center;
-  }
+  .mob-cat-header { background: rgba(255,255,255,0.03); padding: 16px; font-weight: 800; font-size: 1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
   .mob-cat-header .icon { transition: transform 0.3s; }
   .mob-cat-group.active .mob-cat-header .icon { transform: rotate(180deg); }
   .mob-sub-list { display: none; padding: 10px 16px; background: rgba(0,0,0,0.2); }
@@ -204,10 +162,7 @@
   .mob-sub-list a { color: #a0a0b0; text-decoration: none; font-size: 0.9rem; padding: 8px 0; border-bottom: 1px dashed rgba(255,255,255,0.05); }
   .mob-sub-list a:last-child { border-bottom: none; }
 
-  @media (max-width: 900px) {
-    .mega-menu-wrapper { display: none; }
-    .mobile-menu-btn { display: block; }
-  }
+  @media (max-width: 900px) { .mega-menu-wrapper { display: none; } .mobile-menu-btn { display: block; } }
 
   /* ============ استایل‌های عمومی صفحات ============ */
   .hero { 
@@ -218,19 +173,26 @@
     font-family: 'Orbitron', sans-serif; font-size: clamp(2rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.2;
     letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(135deg, #fff, var(--ice-blue), var(--pink-light));
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 40px rgba(168,220,255,0.5)); margin-bottom: 20px;
+    filter: drop-shadow(0 0 40px rgba(168,220,255,0.5)); margin-bottom: 10px;
   }
-  .hero-subtitle {
-    font-size: 1.2rem; color: var(--ice-white); font-weight: 600; letter-spacing: 4px;
-    text-shadow: 0 0 20px rgba(168,220,255,0.8); animation: pulse 3s infinite alternate;
+  
+  /* ★★★ شعار اول سایت ★★★ */
+  .hero-slogan {
+    font-size: 1.4rem; color: var(--ice-white); font-weight: 800; letter-spacing: 2px; margin-bottom: 30px;
+    text-shadow: 0 0 20px rgba(168,220,255,0.8), 0 0 40px rgba(157,0,255,0.4); animation: pulse 3s infinite alternate;
   }
-  @keyframes pulse { from { opacity: 0.6; } to { opacity: 1; } }
+  @keyframes pulse { from { opacity: 0.7; transform: scale(1); } to { opacity: 1; transform: scale(1.02); } }
 
   .page { display: none; animation: fadeIn 0.5s ease; }
   .page.active { display: block; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-  .section-head { text-align: center; padding: 40px 20px 30px; }
+  /* ★★★ شعار بالای محصولات ★★★ */
+  .section-head { text-align: center; padding: 30px 20px 20px; }
+  .section-slogan {
+    color: var(--pink-light); font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(255,0,128,0.6);
+  }
   .section-title { font-size: 1.8rem; font-weight: 900; color: #fff; display: flex; align-items: center; justify-content: center; gap: 15px; }
   .section-title::before, .section-title::after { content: ''; width: 40px; height: 1px; background: linear-gradient(90deg, transparent, var(--ice-blue)); }
   .section-title::after { background: linear-gradient(90deg, var(--ice-blue), transparent); }
@@ -315,6 +277,17 @@
   .total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding: 14px 18px; background: rgba(255,255,255,0.03); border-radius: 12px; }
   .total-price { font-size: 1.4rem; font-weight: 900; color: var(--ice-white); }
 
+  /* ★★★ شعار در پنجره نهایی سازی خرید ★★★ */
+  .checkout-slogan {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--ice-blue);
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(168,220,255,0.5);
+    letter-spacing: 0.5px;
+  }
+
   /* دکمه‌های پرداخت */
   .checkout-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .checkout-btn { 
@@ -350,12 +323,13 @@
   .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(120px); background: linear-gradient(135deg, var(--purple-2), var(--pink)); color: #fff; padding: 14px 28px; border-radius: 12px; font-weight: 700; z-index: 2000; transition: transform 0.4s; font-size: 0.9rem; }
   .toast.show { transform: translateX(-50%) translateY(0); }
 
-  /* ریسپانسیو عمومی */
+  /* ریسپانسیو */
   @media (max-width: 768px) {
     .nav-top { padding: 10px 16px; }
     .hero { padding-top: 100px; }
     .hero-title { font-size: 2rem; }
-    .hero-subtitle { font-size: 0.9rem; }
+    .hero-slogan { font-size: 1rem; }
+    .section-slogan { font-size: 0.9rem; }
     .products-container { padding: 10px 16px 60px; }
     .products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .product-card { padding: 10px; border-radius: 20px; }
@@ -382,7 +356,6 @@
 <div class="lightning-flash" id="lightningFlash"></div>
 <div class="grain"></div>
 
-<!-- ★★★ ناوبری جدید مگا منو ★★★ -->
 <nav id="navbar">
   <div class="nav-top">
     <div class="logo" onclick="showPage('home')">
@@ -391,40 +364,43 @@
     </div>
     
     <div style="display: flex; align-items: center; gap: 15px;">
+      <!-- آیکون سبد خرید مدرن -->
       <button class="cart-btn" onclick="openCart()">
-        <span>🛒</span> <span style="display: none; @media(min-width: 768px) { display: inline; }">سبد خرید</span> <span class="cart-count" id="cartCount">0</span>
+        <svg viewBox="0 0 24 24">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span style="display: none; @media(min-width: 768px) { display: inline; }">سبد خرید</span> 
+        <span class="cart-count" id="cartCount">0</span>
       </button>
       <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
     </div>
   </div>
   
-  <!-- منوی دسکتاپ (مگا منو) -->
-  <div class="mega-menu-wrapper" id="megaMenuWrapper">
-    <!-- توسط جاوا اسکریپت پر می‌شود -->
-  </div>
+  <div class="mega-menu-wrapper" id="megaMenuWrapper"></div>
 </nav>
 
-<!-- منوی موبایل -->
 <div class="mobile-menu" id="mobileMenu">
   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
     <span style="font-family: 'Orbitron'; font-weight: 900; font-size: 1.2rem;">دسته‌بندی‌ها</span>
     <button class="close-btn" onclick="toggleMobileMenu()">✕</button>
   </div>
-  <div id="mobileMenuContent">
-    <!-- توسط جاوا اسکریپت پر می‌شود -->
-  </div>
+  <div id="mobileMenuContent"></div>
 </div>
 
-<!-- صفحات -->
+<!-- صفحه اصلی با شعار اول -->
 <div id="home" class="page active">
   <section class="hero">
     <h1 class="hero-title">SPORT T</h1>
-    <div class="hero-subtitle">فروش به صورت تک و عمده</div>
+    <div class="hero-slogan">اعتماد شما اعتبار ماست</div>
   </section>
 </div>
 
 <div id="category-page" class="page">
   <div class="section-head">
+    <!-- شعار بالای محصولات -->
+    <div class="section-slogan">استاندارد بالاتر انتخاب مطمعن تر</div>
     <h2 class="section-title" id="currentCategoryTitle">همه محصولات</h2>
   </div>
   <div class="products-container">
@@ -483,6 +459,10 @@
         <span>مبلغ کل:</span>
         <span class="total-price" id="totalPrice">۰ تومان</span>
       </div>
+      
+      <!-- شعار در پنجره نهایی سازی خرید -->
+      <div class="checkout-slogan">فراتر از یک خرید آغاز یک اعتماد است</div>
+      
       <div class="checkout-options">
         <button class="checkout-btn tg" onclick="checkout('telegram')">✈️ ارسال در تلگرام</button>
         <button class="checkout-btn ble" onclick="checkout('bale')">💬 ارسال در بله</button>
@@ -494,7 +474,7 @@
 <footer>
   <div class="footer-contact">
     <a class="contact-item" href="tel:09128140980">📞 09128140980</a>
-    <a class="contact-item" href="https://t.me/sajadth79" target="_blank">✈️ @sajadth79</a>
+    <a class="contact-item" href="https://t.me/Sport_T_Arena" target="_blank">✈️ @Sport_T_Arena</a>
     <a class="contact-item" href="https://ble.ir/DaDio" target="_blank">💬 @DaDio (بله)</a>
   </div>
   <div style="color: #444; font-size: 0.8rem;">© 2025 SPORT T</div>
@@ -503,17 +483,14 @@
 <div class="toast" id="toast">✓ انجام شد</div>
 
 <script>
-  // ★★★ ۱. ساختار داده‌های دسته‌بندی (دقیقاً طبق لیست شما) ★★★
   const CATEGORIES_DATA = {
     'زمستونی': ['ست', 'کاپشن', 'دستکش'],
     'تابستونی': ['ست', 'تیشرت زنانه', 'تیشرت مردانه', 'حلقه ای مردانه', 'حلقه ای زنانه', 'شلوارک زنانه', 'شلوارک مردانه', 'نیم تنه'],
     'بدنسازی': ['دستکش بدنسازی', 'جوراب یوگا', 'کش پیلاتس', 'کش لوپ', 'مت', 'طناب', 'مچ بند', 'مچ بند انگشتی', 'زانو بند', 'شیکر', 'قمقمه', 'هدبند', 'دستبند', 'کیف', 'شوزبگ', 'کمربند بدنسازی', 'فین شنا', 'وزنه پا شنی', 'لگ مردانه', 'استریج'],
     'توپ': ['سالنی', 'چمن', 'رقابت های محبوب جهان'],
-    'کفش': ['کفش ورزشی', 'کفش رانینگ', 'کفش بسکتبال'] // چون زیرمجموعه ندادی، چند مورد پیش‌فرض گذاشتم
+    'کفش': ['کفش ورزشی', 'کفش رانینگ', 'کفش بسکتبال']
   };
 
-  // ★★★ ۲. دیتابیس نمونه محصولات (برای تست نمایش) ★★★
-  // از ساختار "دسته اصلی - زیردسته" استفاده می‌کنم تا فیلتر کردن راحت باشه
   const PRODUCTS = [
     { id: 'P1', cat: 'زمستونی', subCat: 'ست', name: 'ست زمستانی کوهنوردی', specs: 'گرم و ضدآب', price: 1250000, image: 'https://images.pexels.com/photos/4498156/pexels-photo-4498156.jpeg?auto=compress&cs=tinysrgb&w=400', requiresSize: true },
     { id: 'P2', cat: 'تابستونی', subCat: 'تیشرت مردانه', name: 'تیشرت نخی آستین کوتاه', specs: 'نخ پنبه خنک', price: 250000, image: 'https://images.pexels.com/photos/4498606/pexels-photo-4498606.jpeg?auto=compress&cs=tinysrgb&w=400', requiresSize: true },
@@ -525,26 +502,20 @@
     { id: 'P8', cat: 'کفش', subCat: 'کفش رانینگ', name: 'کفش دوی حرفه‌ای', specs: 'زیره فوم واکنشی', price: 3200000, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80', requiresSize: false }
   ];
 
-  // ===== ساخت منوها =====
   const megaWrapper = document.getElementById('megaMenuWrapper');
   const mobileMenuContent = document.getElementById('mobileMenuContent');
   let activeCat = 'همه محصولات';
   let activeSubCat = '';
 
-  // ساخت منوی دسکتاپ
   for (const [mainCat, subs] of Object.entries(CATEGORIES_DATA)) {
     const item = document.createElement('div');
     item.className = 'mega-item';
-    
     const btn = document.createElement('button');
     btn.className = 'mega-btn';
     btn.innerHTML = `${mainCat} <span style="font-size: 10px;">▼</span>`;
     item.appendChild(btn);
-
     const panel = document.createElement('div');
     panel.className = 'mega-panel';
-    
-    // دکمه "همه محصولات" در بالای پنل
     const allBtn = document.createElement('a');
     allBtn.className = 'sub-cat-btn';
     allBtn.style.fontWeight = '900';
@@ -552,8 +523,6 @@
     allBtn.textContent = `همه ${mainCat}`;
     allBtn.onclick = () => filterProducts(mainCat, '');
     panel.appendChild(allBtn);
-
-    // زیردسته‌ها
     subs.forEach(sub => {
       const subBtn = document.createElement('a');
       subBtn.className = 'sub-cat-btn';
@@ -561,79 +530,60 @@
       subBtn.onclick = () => filterProducts(mainCat, sub);
       panel.appendChild(subBtn);
     });
-
     item.appendChild(panel);
     megaWrapper.appendChild(item);
   }
-  // دکمه "همه محصولات" در ابتدای منو
   const allItem = document.createElement('div');
   allItem.className = 'mega-item';
   allItem.innerHTML = `<button class="mega-btn" onclick="filterProducts('همه محصولات', '')">همه محصولات</button>`;
   megaWrapper.prepend(allItem);
 
-
-  // ساخت منوی موبایل (آکاردئونی)
   for (const [mainCat, subs] of Object.entries(CATEGORIES_DATA)) {
     const group = document.createElement('div');
     group.className = 'mob-cat-group';
-    
     const header = document.createElement('div');
     header.className = 'mob-cat-header';
     header.innerHTML = `<span>${mainCat}</span> <span class="icon">▼</span>`;
-    header.onclick = () => {
-      group.classList.toggle('active');
-    };
+    header.onclick = () => group.classList.toggle('active');
     group.appendChild(header);
-
     const subList = document.createElement('div');
     subList.className = 'mob-sub-list';
-    
     const allBtn = document.createElement('a');
     allBtn.textContent = `همه ${mainCat}`;
     allBtn.style.color = 'var(--ice-blue)';
     allBtn.onclick = () => { filterProducts(mainCat, ''); toggleMobileMenu(); };
     subList.appendChild(allBtn);
-
     subs.forEach(sub => {
       const subBtn = document.createElement('a');
       subBtn.textContent = sub;
       subBtn.onclick = () => { filterProducts(mainCat, sub); toggleMobileMenu(); };
       subList.appendChild(subBtn);
     });
-
     group.appendChild(subList);
     mobileMenuContent.appendChild(group);
   }
 
-  // ===== توابع فیلتر و نمایش =====
   function filterProducts(cat, subCat) {
     activeCat = cat;
     activeSubCat = subCat;
     showPage('category');
-    
     const title = subCat ? `${cat} - ${subCat}` : (cat === 'همه محصولات' ? 'همه محصولات' : `همه ${cat}`);
     document.getElementById('currentCategoryTitle').textContent = title;
-    
     renderProducts();
   }
 
   function showPage(pageId) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    if (pageId === 'home') {
-      document.getElementById('home').classList.add('active');
-    } else {
-      document.getElementById('category-page').classList.add('active');
-    }
+    if (pageId === 'home') document.getElementById('home').classList.add('active');
+    else document.getElementById('category-page').classList.add('active');
     window.scrollTo(0, 0);
   }
 
-  // توگل کردن منوی موبایل
   function toggleMobileMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
     document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
   }
 
-  // ===== رندر محصولات =====
   const grid = document.getElementById('productsGrid');
   const formatPrice = (n) => n.toLocaleString('fa-IR');
   const chosenSizes = {};
@@ -642,9 +592,7 @@
     let filtered = PRODUCTS;
     if (activeCat !== 'همه محصولات') {
       filtered = filtered.filter(p => p.cat === activeCat);
-      if (activeSubCat) {
-        filtered = filtered.filter(p => p.subCat === activeSubCat);
-      }
+      if (activeSubCat) filtered = filtered.filter(p => p.subCat === activeSubCat);
     }
 
     if (filtered.length === 0) {
@@ -654,7 +602,6 @@
 
     grid.innerHTML = filtered.map((p) => {
       const sizeIcon = p.requiresSize ? `<div class="badge-size">📏 سایز</div>` : '';
-      
       const footer = p.requiresSize ? `
         <div class="product-footer" style="flex-direction: column;">
           <div class="price-block" style="align-self: flex-start; margin-bottom: 12px;">
@@ -675,7 +622,6 @@
           <button class="add-btn" id="btn-${p.id}" onclick="addToCart('${p.id}')">+</button>
         </div>
       `;
-      
       return `
       <div class="product-card">
         <div class="product-img-wrap">
@@ -692,7 +638,7 @@
     }).join('');
   }
 
-  // ===== بقیه توابع (سایز، سبد خرید و...) مثل قبل =====
+  // ===== سایز و سبد خرید =====
   let currentSizeProduct = null;
   const sizeModal = document.getElementById('sizeModal');
   const heightSlider = document.getElementById('heightSlider');
@@ -712,10 +658,7 @@
     updateSliders(); calculateSize();
     sizeModal.classList.add('active'); document.body.style.overflow = 'hidden';
   }
-
-  function closeSizeModal() {
-    sizeModal.classList.remove('active'); document.body.style.overflow = ''; currentSizeProduct = null;
-  }
+  function closeSizeModal() { sizeModal.classList.remove('active'); document.body.style.overflow = ''; currentSizeProduct = null; }
   sizeModal.addEventListener('click', (e) => { if (e.target.id === 'sizeModal') closeSizeModal(); });
 
   function updateSliders() {
@@ -732,7 +675,6 @@
     let waistScore = wa < 70 ? 1 : wa < 78 ? 2 : wa < 88 ? 3 : wa < 98 ? 4 : wa < 108 ? 5 : wa < 120 ? 6 : 7;
     let bmiScore = bmi < 18.5 ? 1.3 : bmi < 21 ? 2 : bmi < 24 ? 3 : bmi < 27 ? 4 : bmi < 31 ? 5 : 6;
     let heightScore = h > 195 ? 1 : h > 185 ? 0.5 : h < 160 ? -0.5 : 0;
-    
     const finalScore = waistScore * 0.6 + bmiScore * 0.4 + heightScore;
     const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
     let sizeIndex = Math.max(0, Math.min(sizes.length - 1, Math.round(finalScore) - 1));
@@ -755,7 +697,6 @@
   }
 
   let cart = [];
-
   function addToCart(id) {
     const product = PRODUCTS.find(p => p.id === id);
     const existing = cart.find(i => i.id === id && !i.size);
@@ -766,7 +707,6 @@
     const btn = document.getElementById('btn-' + id);
     if (btn) { btn.textContent = '✓'; setTimeout(() => { btn.textContent = '+'; }, 1000); }
   }
-
   function addToCartWithSize(id, size) {
     const product = PRODUCTS.find(p => p.id === id);
     const existing = cart.find(i => i.id === id && i.size === size);
@@ -775,7 +715,6 @@
     updateCartUI();
     showToast(`✓ ${product.name} (سایز ${size}) اضافه شد`);
   }
-
   function changeQty(id, size, delta) {
     const item = cart.find(i => i.id === id && i.size === size);
     if (!item) return;
@@ -783,7 +722,6 @@
     if (item.qty <= 0) cart = cart.filter(i => !(i.id === id && i.size === size));
     updateCartUI();
   }
-
   function removeItem(id, size) { cart = cart.filter(i => !(i.id === id && i.size === size)); updateCartUI(); }
 
   function updateCartUI() {
@@ -838,7 +776,8 @@
     copyToClipboard(message).then(() => {
       showToast('✓ متن سفارش کپی شد...');
       setTimeout(() => {
-        if (method === 'telegram') window.open(`https://t.me/sajadth79?text=${encodeURIComponent(message)}`, '_blank');
+        // ★★★ آیدی تلگرام آپدیت شد ★★★
+        if (method === 'telegram') window.open(`https://t.me/Sport_T_Arena?text=${encodeURIComponent(message)}`, '_blank');
         else window.open(`https://ble.ir/DaDio?text=${encodeURIComponent(message)}`, '_blank');
       }, 900);
     });
@@ -860,68 +799,39 @@
   // ===== رعد و برق =====
   const lightningContainer = document.getElementById('lightningContainer');
   const lightningFlash = document.getElementById('lightningFlash');
-  
   function createLightningBolt() {
-    const startX = Math.random() * 100;
-    const startY = -10;
-    const endX = startX + (Math.random() - 0.5) * 50;
-    const endY = 60 + Math.random() * 40;
-    
+    const startX = Math.random() * 100; const startY = -10;
+    const endX = startX + (Math.random() - 0.5) * 50; const endY = 60 + Math.random() * 40;
     const path = generateLightningPath(startX, startY, endX, endY);
     const branch1 = generateLightningPath(startX + (endX-startX)*0.3, startY + (endY-startY)*0.3, startX + (Math.random()-0.5)*90, startY + (endY-startY)*0.6);
     const branch2 = generateLightningPath(startX + (endX-startX)*0.5, startY + (endY-startY)*0.5, startX + (Math.random()-0.5)*70, endY + 10);
-    
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('class', 'lightning-bolt strike');
-    svg.setAttribute('viewBox', '0 0 100 100');
-    svg.setAttribute('preserveAspectRatio', 'none');
+    svg.setAttribute('viewBox', '0 0 100 100'); svg.setAttribute('preserveAspectRatio', 'none');
     svg.style.cssText = `position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;`;
-    
-    svg.innerHTML = `
-      <path class="bolt-branch-2" d="${branch2}"/>
-      <path class="bolt-branch-1" d="${branch1}"/>
-      <path class="bolt-main" d="${path}"/>
-    `;
-    
+    svg.innerHTML = `<path class="bolt-branch-2" d="${branch2}"/><path class="bolt-branch-1" d="${branch1}"/><path class="bolt-main" d="${path}"/>`;
     lightningContainer.appendChild(svg);
-    
     const flashType = Math.floor(Math.random() * 2) + 1;
-    lightningFlash.style.setProperty('--fx', startX + '%');
-    lightningFlash.style.setProperty('--fy', startY + 20 + '%');
-    lightningFlash.className = 'lightning-flash';
-    void lightningFlash.offsetWidth;
-    lightningFlash.classList.add('flash-' + flashType);
-    
+    lightningFlash.style.setProperty('--fx', startX + '%'); lightningFlash.style.setProperty('--fy', startY + 20 + '%');
+    lightningFlash.className = 'lightning-flash'; void lightningFlash.offsetWidth; lightningFlash.classList.add('flash-' + flashType);
     setTimeout(() => svg.remove(), 1500);
   }
-  
   function generateLightningPath(x1, y1, x2, y2) {
-    const segments = 15 + Math.floor(Math.random() * 10);
-    let path = `M${x1},${y1}`;
-    let cx = x1, cy = y1;
+    const segments = 15 + Math.floor(Math.random() * 10); let path = `M${x1},${y1}`; let cx = x1, cy = y1;
     for (let i = 1; i <= segments; i++) {
       const p = i / segments;
-      cx = x1 + (x2 - x1) * p + (Math.random() - 0.5) * 4;
-      cy = y1 + (y2 - y1) * p + (Math.random() - 0.5) * 1;
+      cx = x1 + (x2 - x1) * p + (Math.random() - 0.5) * 4; cy = y1 + (y2 - y1) * p + (Math.random() - 0.5) * 1;
       path += ` L${cx.toFixed(2)},${cy.toFixed(2)}`;
     }
     return path;
   }
-  
   function scheduleLightning() {
     const delay = 3000 + Math.random() * 4000;
-    setTimeout(() => {
-      createLightningBolt();
-      if (Math.random() < 0.3) setTimeout(createLightningBolt, 200 + Math.random() * 300);
-      scheduleLightning();
-    }, delay);
+    setTimeout(() => { createLightningBolt(); if (Math.random() < 0.3) setTimeout(createLightningBolt, 200 + Math.random() * 300); scheduleLightning(); }, delay);
   }
   setTimeout(() => { createLightningBolt(); scheduleLightning(); }, 2000);
   
-  // باران
-  const rainCanvas = document.getElementById('rain-canvas');
-  const rainCtx = rainCanvas.getContext('2d');
-  let rainDrops = [];
+  const rainCanvas = document.getElementById('rain-canvas'); const rainCtx = rainCanvas.getContext('2d'); let rainDrops = [];
   function resizeRain() { rainCanvas.width = window.innerWidth; rainCanvas.height = window.innerHeight; }
   resizeRain(); window.addEventListener('resize', resizeRain);
   class RainDrop {
@@ -934,7 +844,6 @@
   function animateRain() { rainCtx.clearRect(0, 0, rainCanvas.width, rainCanvas.height); rainDrops.forEach(d => { d.update(); d.draw(); }); requestAnimationFrame(animateRain); }
   animateRain();
 
-  // شروع
   window.addEventListener('load', () => { setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 1200); });
   renderProducts();
   updateCartUI();
