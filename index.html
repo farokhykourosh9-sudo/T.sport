@@ -112,7 +112,7 @@
   @keyframes rotateBox { to { transform: rotate(360deg); } }
   .logo-text { background: linear-gradient(90deg, #fff, var(--ice-blue), var(--pink-light)); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 12px rgba(168,220,255,0.6)); animation: shine 4s linear infinite; }
   
-  /* ★★★ آیکون سبد خرید مدرن ★★★ */
+  /* آیکون سبد خرید مدرن */
   .cart-btn {
     position: relative; background: linear-gradient(135deg, var(--purple-2), var(--pink)); border: none; color: #fff; padding: 10px 18px;
     border-radius: 14px; font-family: inherit; font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 10px; transition: all 0.3s;
@@ -166,35 +166,39 @@
 
   /* ============ استایل‌های عمومی صفحات ============ */
   .hero { 
-    height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; 
-    padding: 160px 20px 60px; position: relative;
+    height: 90vh; min-height: 600px; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; 
+    padding: 150px 20px 40px; position: relative;
   }
   .hero-title {
-    font-family: 'Orbitron', sans-serif; font-size: clamp(2rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.2;
-    letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(135deg, #fff, var(--ice-blue), var(--pink-light));
+    font-family: 'Orbitron', sans-serif; font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; line-height: 1.2;
+    letter-spacing: 4px; text-transform: uppercase; background: linear-gradient(135deg, #fff, var(--ice-blue), var(--pink-light));
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 40px rgba(168,220,255,0.5)); margin-bottom: 10px;
+    filter: drop-shadow(0 0 40px rgba(168,220,255,0.6)); margin-bottom: 20px; animation: floatText 4s ease-in-out infinite alternate;
   }
+  @keyframes floatText { from { transform: translateY(0); } to { transform: translateY(-10px); } }
   
-  /* ★★★ شعار اول سایت ★★★ */
+  /* ★ شعار اول سایت (بسیار درشت و چشمگیر) ★ */
   .hero-slogan {
-    font-size: 1.4rem; color: var(--ice-white); font-weight: 800; letter-spacing: 2px; margin-bottom: 30px;
-    text-shadow: 0 0 20px rgba(168,220,255,0.8), 0 0 40px rgba(157,0,255,0.4); animation: pulse 3s infinite alternate;
+    font-size: clamp(1.2rem, 3vw, 2rem); color: var(--ice-white); font-weight: 900; letter-spacing: 3px; margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(168,220,255,0.8), 0 0 40px rgba(157,0,255,0.6); animation: pulseSlogan 2s infinite alternate;
   }
-  @keyframes pulse { from { opacity: 0.7; transform: scale(1); } to { opacity: 1; transform: scale(1.02); } }
+  @keyframes pulseSlogan { from { opacity: 0.8; text-shadow: 0 0 10px rgba(168,220,255,0.5); } to { opacity: 1; text-shadow: 0 0 30px rgba(168,220,255,1), 0 0 60px rgba(157,0,255,0.8); } }
 
   .page { display: none; animation: fadeIn 0.5s ease; }
   .page.active { display: block; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* ★★★ شعار بالای محصولات ★★★ */
-  .section-head { text-align: center; padding: 30px 20px 20px; }
+  /* ★ شعار بالای محصولات ★ */
+  .section-head { text-align: center; padding: 40px 20px 20px; }
   .section-slogan {
-    color: var(--pink-light); font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 15px;
-    text-shadow: 0 0 15px rgba(255,0,128,0.6);
+    display: inline-block;
+    background: linear-gradient(90deg, transparent, rgba(255,0,128,0.1), transparent);
+    color: var(--pink-light); font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 15px; padding: 8px 30px;
+    border-top: 1px solid rgba(255,0,128,0.3); border-bottom: 1px solid rgba(255,0,128,0.3);
+    text-shadow: 0 0 15px rgba(255,0,128,0.8);
   }
   .section-title { font-size: 1.8rem; font-weight: 900; color: #fff; display: flex; align-items: center; justify-content: center; gap: 15px; }
-  .section-title::before, .section-title::after { content: ''; width: 40px; height: 1px; background: linear-gradient(90deg, transparent, var(--ice-blue)); }
+  .section-title::before, .section-title::after { content: ''; width: 50px; height: 2px; background: linear-gradient(90deg, transparent, var(--ice-blue)); box-shadow: 0 0 10px var(--ice-blue); }
   .section-title::after { background: linear-gradient(90deg, var(--ice-blue), transparent); }
 
   .products-container { padding: 10px 40px 120px; max-width: 1400px; margin: 0 auto; }
@@ -216,9 +220,6 @@
   .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.2); z-index: 1; }
   .product-card:hover .product-img-wrap img { transform: scale(1.08); }
   
-  .badge-tag { position: absolute; top: 12px; right: 12px; z-index: 2; padding: 6px 14px; border-radius: 50px; font-size: 11px; font-weight: 900; letter-spacing: 1px; backdrop-filter: blur(10px); }
-  .badge-tag.hot { background: rgba(255,0,128,0.2); color: #ff66c4; border: 1px solid rgba(255,0,128,0.4); box-shadow: 0 0 15px rgba(255,0,128,0.3); }
-  .badge-tag.new { background: rgba(0,180,216,0.2); color: #00d4ff; border: 1px solid rgba(0,180,216,0.4); box-shadow: 0 0 15px rgba(0,180,216,0.3); }
   .badge-size { position: absolute; top: 12px; left: 12px; z-index: 2; padding: 6px 12px; border-radius: 50px; font-size: 11px; font-weight: 800; background: rgba(10, 20, 30, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(168,220,255,0.6); color: var(--ice-white); display: flex; align-items: center; gap: 5px; }
 
   .product-info { padding: 20px 6px 10px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
@@ -274,18 +275,20 @@
   .qty-val { min-width: 20px; text-align: center; font-weight: 800; font-size: 0.9rem; }
   .remove-btn { background: transparent; border: none; color: #ff5577; font-size: 1.1rem; cursor: pointer; padding: 6px; }
   
-  .total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding: 14px 18px; background: rgba(255,255,255,0.03); border-radius: 12px; }
+  .total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding: 14px 18px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px dashed rgba(168,220,255,0.2); }
   .total-price { font-size: 1.4rem; font-weight: 900; color: var(--ice-white); }
 
-  /* ★★★ شعار در پنجره نهایی سازی خرید ★★★ */
+  /* ★ شعار در پنجره نهایی سازی خرید ★ */
   .checkout-slogan {
     text-align: center;
-    font-size: 0.95rem;
-    color: var(--ice-blue);
-    margin-bottom: 15px;
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(168,220,255,0.5);
+    font-size: 1rem;
+    color: var(--pink-light);
+    margin-bottom: 18px;
+    font-weight: 800;
+    text-shadow: 0 0 15px rgba(255,0,128,0.6);
     letter-spacing: 0.5px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,0,128,0.2);
   }
 
   /* دکمه‌های پرداخت */
@@ -327,9 +330,9 @@
   @media (max-width: 768px) {
     .nav-top { padding: 10px 16px; }
     .hero { padding-top: 100px; }
-    .hero-title { font-size: 2rem; }
+    .hero-title { font-size: 2.5rem; }
     .hero-slogan { font-size: 1rem; }
-    .section-slogan { font-size: 0.9rem; }
+    .section-slogan { font-size: 0.9rem; padding: 6px 20px; }
     .products-container { padding: 10px 16px 60px; }
     .products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .product-card { padding: 10px; border-radius: 20px; }
@@ -364,7 +367,6 @@
     </div>
     
     <div style="display: flex; align-items: center; gap: 15px;">
-      <!-- آیکون سبد خرید مدرن -->
       <button class="cart-btn" onclick="openCart()">
         <svg viewBox="0 0 24 24">
           <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
@@ -389,20 +391,19 @@
   <div id="mobileMenuContent"></div>
 </div>
 
-<!-- صفحه اصلی با شعار اول -->
+<!-- صفحه اصلی با شعار و محصولات -->
 <div id="home" class="page active">
   <section class="hero">
     <h1 class="hero-title">SPORT T</h1>
     <div class="hero-slogan">اعتماد شما اعتبار ماست</div>
   </section>
-</div>
-
-<div id="category-page" class="page">
+  
   <div class="section-head">
-    <!-- شعار بالای محصولات -->
     <div class="section-slogan">استاندارد بالاتر انتخاب مطمعن تر</div>
-    <h2 class="section-title" id="currentCategoryTitle">همه محصولات</h2>
+    <h2 class="section-title" id="currentCategoryTitle">محصولات ویژه</h2>
   </div>
+  
+  <!-- گرید محصولات صفحه اصلی -->
   <div class="products-container">
     <div class="products-grid" id="productsGrid"></div>
   </div>
@@ -474,7 +475,7 @@
 <footer>
   <div class="footer-contact">
     <a class="contact-item" href="tel:09128140980">📞 09128140980</a>
-    <a class="contact-item" href="https://t.me/Sport_T_Arena" target="_blank">✈️ @Sport_T_Arena</a>
+    <a class="contact-item" href="https://t.me/Sport_T_Arena" target="_blank">✈️ @SPORT_T_ARENA </a>
     <a class="contact-item" href="https://ble.ir/DaDio" target="_blank">💬 @DaDio (بله)</a>
   </div>
   <div style="color: #444; font-size: 0.8rem;">© 2025 SPORT T</div>
@@ -507,6 +508,7 @@
   let activeCat = 'همه محصولات';
   let activeSubCat = '';
 
+  // ساخت منوها
   for (const [mainCat, subs] of Object.entries(CATEGORIES_DATA)) {
     const item = document.createElement('div');
     item.className = 'mega-item';
@@ -566,16 +568,27 @@
   function filterProducts(cat, subCat) {
     activeCat = cat;
     activeSubCat = subCat;
-    showPage('category');
-    const title = subCat ? `${cat} - ${subCat}` : (cat === 'همه محصولات' ? 'همه محصولات' : `همه ${cat}`);
+    
+    const title = subCat ? `${cat} - ${subCat}` : (cat === 'همه محصولات' ? 'محصولات ویژه' : `همه ${cat}`);
     document.getElementById('currentCategoryTitle').textContent = title;
+    
+    // هدایت به بخش محصولات در همان صفحه اصلی
+    document.getElementById('home').classList.add('active');
+    document.querySelectorAll('.page').forEach(p => { if(p.id !== 'home') p.classList.remove('active'); });
+    
     renderProducts();
+    
+    // اسکرول نرم به بخش محصولات
+    document.querySelector('.section-head').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function showPage(pageId) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    if (pageId === 'home') document.getElementById('home').classList.add('active');
-    else document.getElementById('category-page').classList.add('active');
+    document.getElementById('home').classList.add('active');
+    activeCat = 'همه محصولات';
+    activeSubCat = '';
+    document.getElementById('currentCategoryTitle').textContent = 'محصولات ویژه';
+    renderProducts();
     window.scrollTo(0, 0);
   }
 
@@ -776,7 +789,6 @@
     copyToClipboard(message).then(() => {
       showToast('✓ متن سفارش کپی شد...');
       setTimeout(() => {
-        // ★★★ آیدی تلگرام آپدیت شد ★★★
         if (method === 'telegram') window.open(`https://t.me/Sport_T_Arena?text=${encodeURIComponent(message)}`, '_blank');
         else window.open(`https://ble.ir/DaDio?text=${encodeURIComponent(message)}`, '_blank');
       }, 900);
